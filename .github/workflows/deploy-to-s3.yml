@@ -32,3 +32,8 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::240953826108:role/s3-bienestar-github-actions
           aws-region: us-east-2
+      - name: Deploy to S3
+        run: |
+          ls -R
+          aws s3 sync build/ s3://TU_BUCKET --delete
+
