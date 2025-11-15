@@ -35,5 +35,5 @@ jobs:
       - name: Deploy to S3
         run: |
           ls -R
-          aws s3 sync build/ s3://s3-bienestar-github-actions --delete
+          aws s3 sync build/ s3://bienestar-deploy-dev --delete
 
