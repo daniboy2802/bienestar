@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../logo.svg"; // ruta relativa que me indicaste
+import logo from "../logo.svg";
 
 const links = [
   { label: "CONÓZCANOS", to: "/conozcanos" },
@@ -14,16 +14,15 @@ export default function AppNavbar() {
   return (
     <header className="bg-[#F1F1F1] border-b border-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
         <div className="flex items-center">
-          <img
-            src={logo}
-            alt="Bienestar PAE"
-            className="h-16 w-auto"
-          />
+          <NavLink to="/">
+            <img
+              src={logo}
+              alt="Bienestar PAE"
+              className="h-16 w-auto cursor-pointer"
+            />
+          </NavLink>
         </div>
-
-        {/* Menu */}
         <nav className="hidden md:flex items-center gap-10 text-sm tracking-[0.16em] text-[#005781]">
           {links.map((link) => (
             <NavLink

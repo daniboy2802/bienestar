@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,14 @@ const router = createBrowserRouter([
       </MainLayout>
     )
   },
+  {
+    path: "/conozcanos",
+    element: (
+      <MainLayout>
+        <AboutUs />
+      </MainLayout>
+    )
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
