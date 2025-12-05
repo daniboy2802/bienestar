@@ -27,7 +27,7 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col w-full font-sans">
       <section className="flex flex-col md:flex-row h-auto md:h-[350px] w-full">
-        <div className="w-full md:w-1/2 bg-[#17b8b9] flex flex-col justify-center px-8 md:px-20 py-12">
+        <div className="w-full md:w-1/2 bg-[#41affd] flex flex-col justify-center px-8 md:px-20 py-12">
           <Typography variant="h1" color="white" className="text-4xl md:text-6xl font-normal leading-tight">
             Bienvenido <br />
             a Asistencia y <br />
@@ -37,7 +37,7 @@ export default function AboutUs() {
         <div className="w-full md:w-1/2 relative h-[300px] md:h-full">
           <img 
             src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-            alt="Mujer sonriendo mirando hacia arriba" 
+            alt="Imagen Conozcanos" 
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>

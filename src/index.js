@@ -6,6 +6,8 @@ import './index.css';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import Servicio from './pages/Service';
+import Nom35 from './pages/Nom35';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,22 @@ const router = createBrowserRouter([
     element: (
       <MainLayout>
         <AboutUs />
+      </MainLayout>
+    )
+  },
+  {
+    path: "/servicio",
+    element: (
+      <MainLayout>
+        <Servicio />
+      </MainLayout>
+    )
+  },
+  {
+    path: "/nom35",
+    element: (
+      <MainLayout>
+        <Nom35 />
       </MainLayout>
     )
   }
