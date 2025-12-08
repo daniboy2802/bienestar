@@ -7,6 +7,7 @@ import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Servicio from './pages/Service';
+import Servicios from './pages/Servicios';
 import Nom35 from './pages/Nom35';
 
 const router = createBrowserRouter([
@@ -15,6 +16,14 @@ const router = createBrowserRouter([
     element: (
       <MainLayout>
         <Home />
+      </MainLayout>
+    )
+  },
+  {
+    path: "/servicio/:slug", 
+    element: (
+      <MainLayout>
+        <Servicios />
       </MainLayout>
     )
   },
