@@ -7,6 +7,7 @@ import {
 
 const pillarsFirstRow = [
   {
+    slug: "accion-nom-035",
     title: "Acción NOM-035",
     desc: "El costo de no atender el riesgo psicosocial en la empresa es incalculable.",
     icon: (
@@ -122,12 +123,24 @@ function PillarCard({ item }) {
           {item.desc}
         </Typography>
         <div className="mt-auto flex justify-center w-full"> 
-          <div className="border border-gray-300 rounded-full p-2 hover:bg-gray-100 transition-colors">
-               <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-               </svg>
+          <div className="transition-colors hover:bg-gray-100 rounded">
+              <div className="border border-gray-300 rounded px-4 py-1">
+                  <svg
+                      className="w-4 h-4 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                  >
+                      <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                  </svg>
+              </div>
           </div>
-        </div>
+        </div> 
       </CardBody>
     </Card>
   );
