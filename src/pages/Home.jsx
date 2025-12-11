@@ -156,6 +156,17 @@ const pillarsSecondRow = [
   },
 ];
 
+const heroSlides = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+  },
+];
+
 function CountUpStat({ end, suffix, label }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -222,39 +233,45 @@ function CountUpStat({ end, suffix, label }) {
 
 export default function Home() {
   const navigate = useNavigate();
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleCardClick = (slug) => {
     navigate(`/servicio/${slug}`);
   };
 
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4000); 
+
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <div className="flex flex-col w-full">
       <section
-        className="relative h-[600px] w-full bg-cover bg-center"
+        className="relative h-[600px] w-full bg-cover bg-center transition-all duration-700"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: `url('${heroSlides[currentSlide].image}')`,
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
-          <div className="max-w-xl text-white">
-            <Typography variant="h2" className="mb-4 font-normal">
-              Bienestar PAE
+          <div className="max-w-2xl text-white">
+            <Typography
+              variant="h2"
+              className="mb-4 font-normal text-4xl md:text-5xl lg:text-6xl"
+            >
+              Pioneros en México y agentes de inspiración.
             </Typography>
             <Typography
               variant="lead"
-              className="mb-8 font-light text-lg leading-relaxed"
+              className="mb-8 font-light text-base md:text-lg leading-relaxed"
             >
-              Más que apoyo psicológico: <br />
-              somos el <strong className="font-bold">
-                impulso emocional
-              </strong>{" "}
-              que ayuda a sus empleados a{" "}
-              <strong className="font-bold">
-                crecer, superar desafíos y brillar
-              </strong>{" "}
-              en cada ámbito de su vida.
+              y cambio para más de 2.3 millones de personas, impulsando su
+              equilibrio emocional y su capacidad para alcanzar sus metas
+              personales y profesionales.
             </Typography>
             <Button
               size="lg"
@@ -263,6 +280,18 @@ export default function Home() {
               CONOCE MÁS &rarr;
             </Button>
           </div>
+        </div>
+
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2 w-2 rounded-full transition-all ${
+                currentSlide === index ? "w-6 bg-white" : "bg-white/60"
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -281,7 +310,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. PILLARS / CARDS SECTION */}
       <section className="bg-[#EBEBEB] py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -310,7 +338,7 @@ export default function Home() {
               <div
                 key={idx}
                 onClick={() => handleCardClick(item.slug)}
-                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-grow-0 cursor-pointer" // cursor-pointer
+                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-grow-0 cursor-pointer"
               >
                 <PillarCard item={item} />
               </div>
