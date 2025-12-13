@@ -160,10 +160,14 @@ const heroSlides = [
   {
     image:
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    title: "Bienestar PAE",
+    description: "Más que apoyo psicológico:\n\nsomos el impulso emocional que ayuda a sus empleados a crecer, superar desafíos y brillar en cada ambito de su vida.",
   },
   {
     image:
       "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    title: "Pioneros en México y agentes de inspiración.",
+    description: "y cambio para más de 2.3 millones de personas, impulsando su equilibrio emocional y su capacidad para alcanzar sus metas personales y profesionales.",
   },
 ];
 
@@ -234,11 +238,19 @@ function CountUpStat({ end, suffix, label }) {
 export default function Home() {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleCardClick = (slug) => {
     navigate(`/servicio/${slug}`);
   };
 
+  useEffect(() => {
+    setIsAnimating(false);
+    const timer = setTimeout(() => {
+      setIsAnimating(true);
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [currentSlide]);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -247,6 +259,10 @@ export default function Home() {
 
     return () => clearInterval(id);
   }, []);
+
+  const handleSlideChange = (index) => {
+    setCurrentSlide(index);
+  };
 
   return (
     <div className="flex flex-col w-full">
@@ -260,18 +276,26 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
           <div className="max-w-2xl text-white">
             <Typography
+              key={`title-${currentSlide}`}
               variant="h2"
-              className="mb-4 font-normal text-4xl md:text-5xl lg:text-6xl"
+              className={`mb-4 font-normal text-4xl md:text-5xl lg:text-6xl transition-all duration-700 ease-in-out ${
+                isAnimating 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-4'
+              }`}
             >
-              Pioneros en México y agentes de inspiración.
+              {heroSlides[currentSlide].title}
             </Typography>
             <Typography
+              key={`description-${currentSlide}`}
               variant="lead"
-              className="mb-8 font-light text-base md:text-lg leading-relaxed"
+              className={`mb-8 font-light text-base md:text-lg leading-relaxed whitespace-pre-line transition-all duration-700 delay-150 ease-in-out ${
+                isAnimating 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-4'
+              }`}
             >
-              y cambio para más de 2.3 millones de personas, impulsando su
-              equilibrio emocional y su capacidad para alcanzar sus metas
-              personales y profesionales.
+              {heroSlides[currentSlide].description}
             </Typography>
             <Button
               size="lg"
@@ -286,7 +310,7 @@ export default function Home() {
           {heroSlides.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentSlide(index)}
+              onClick={() => handleSlideChange(index)}
               className={`h-2 w-2 rounded-full transition-all ${
                 currentSlide === index ? "w-6 bg-white" : "bg-white/60"
               }`}
