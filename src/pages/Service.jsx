@@ -17,6 +17,7 @@ const pillarsFirstRow = [
     ),
   },
   {
+    slug: "custom-care",
     title: "Customer CARE",
     desc: "Cálida atención a cliente 24/7 X 365.",
     icon: (
@@ -26,6 +27,7 @@ const pillarsFirstRow = [
     ),
   },
   {
+    slug: "cobertura-completa",
     title: "Cobertura completa",
     desc: "De especialidades psicológicas y consultorías especializadas.",
     icon: (
@@ -38,15 +40,17 @@ const pillarsFirstRow = [
 
 const pillarsSecondRow = [
   {
+    slug: "well-being-coaching",
     title: "Well-being coaching fitness emocional.",
     desc: "Fortalecer su estabilidad emocional.",
     icon: (
       <svg className="w-10 h-10 text-[#00A4CF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
+      </svg>  
     ),
   },
   {
+    slug: "webinars",
     title: "Webinars + Conferencias ON-SITE",
     desc: "Nos interesa ser un acompañamiento completo.",
     icon: (
@@ -56,6 +60,7 @@ const pillarsSecondRow = [
     ),
   },
   {
+    slug: "cism",
     title: "CISM",
     desc: "Intervención en crisis.",
     icon: (
@@ -98,7 +103,7 @@ export default function Service() {
             </Typography>
           </div>
           <div className="flex justify-center"> 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {allPillars.map((item, idx) => (
                 <PillarCard key={idx} item={item} />
               ))}
@@ -111,37 +116,39 @@ export default function Service() {
 }
 function PillarCard({ item }) {
   return (
-    <Card className="w-80 h-70 shadow-sm hover:shadow-lg transition-shadow border border-gray-100 rounded-xl"> 
-      <CardBody className="flex flex-col items-center text-center p-8 h-full">
-        <div className="mb-4 p-3 bg-cyan-50 rounded-full">
-            {item.icon}
-        </div>
-        <Typography variant="h6" color="blue-gray" className="mb-2 font-bold">
-          {item.title}
-        </Typography>
-        <Typography className="text-gray-500 text-sm mb-6 flex-grow">
-          {item.desc}
-        </Typography>
-        <div className="mt-auto flex justify-center w-full"> 
-          <div className="transition-colors hover:bg-gray-100 rounded">
-              <div className="border border-gray-300 rounded px-4 py-1">
-                  <svg
-                      className="w-4 h-4 text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                  >
-                      <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                  </svg>
-              </div>
+    <a href={`/servicio/${item.slug}`} className="block w-80 h-full">
+      <Card className="w-full h-full shadow-sm hover:shadow-lg transition-shadow border border-gray-100 rounded-xl cursor-pointer flex flex-col"> 
+        <CardBody className="flex flex-col items-center text-center p-8 h-full flex-grow">
+          <div className="mb-4 p-3 bg-cyan-50 rounded-full">
+              {item.icon}
           </div>
-        </div> 
-      </CardBody>
-    </Card>
+          <Typography variant="h6" color="blue-gray" className="mb-2 font-bold">
+            {item.title}
+          </Typography>
+          <Typography className="text-gray-500 text-sm mb-6 flex-grow">
+            {item.desc}
+          </Typography>
+          <div className="mt-auto flex justify-center w-full"> 
+            <div className="transition-colors hover:bg-gray-100 rounded">
+                <div className="border border-gray-300 rounded px-4 py-1">
+                    <svg
+                        className="w-4 h-4 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                    </svg>
+                </div>
+            </div>
+          </div> 
+        </CardBody>
+      </Card>
+    </a>
   );
 }
