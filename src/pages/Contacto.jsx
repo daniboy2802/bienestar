@@ -4,15 +4,15 @@ export default function Contacto() {
   return (
     <div className="w-full">
       <section className="w-full grid grid-cols-1 md:grid-cols-2 ">
-        <div className="bg-[#2D63A8] flex items-center justify-center py-12 md:py-0">
+        <div className="bg-[#2072b2] flex items-center justify-center py-12 md:py-0">
           <h1 className="text-white text-3xl md:text-4xl font-semibold tracking-wide">
             CONTACTO
           </h1>
         </div>
 
-        <div className="h-[250px]">
+        <div className="h-[350px]">
           <img
-            src="https://images.pexels.com/photos/8867430/pexels-photo-8867430.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            src="/images/contacto.jpg"
             alt="Ejecutiva de soporte al cliente"
             className="w-full h-full object-cover object-center"
           />

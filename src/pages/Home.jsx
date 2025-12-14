@@ -71,26 +71,6 @@ const pillarsFirstRow = [
       </svg>
     ),
   },
-  {
-    slug: "capaz-180",
-    title: "CAPAZ 180",
-    desc: "Ser CAPAZ es un primer paso para lograr sus metas.",
-    icon: (
-      <svg
-        className="w-10 h-10 text-[#00A4CF]"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
-  },
 ];
 
 const pillarsSecondRow = [
@@ -159,13 +139,13 @@ const pillarsSecondRow = [
 const heroSlides = [
   {
     image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "/images/carousel1.jpg",
     title: "Bienestar PAE",
     description: "Más que apoyo psicológico:\n\nsomos el impulso emocional que ayuda a sus empleados a crecer, superar desafíos y brillar en cada ambito de su vida.",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "/images/carousel2.jpg",
     title: "Pioneros en México y agentes de inspiración.",
     description: "y cambio para más de 2.3 millones de personas, impulsando su equilibrio emocional y su capacidad para alcanzar sus metas personales y profesionales.",
   },
@@ -345,7 +325,8 @@ export default function Home() {
             </Typography>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          {/* Ajuste de estilo: Ahora la cuadrícula tiene 3 columnas en pantallas grandes (lg) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             {pillarsFirstRow.map((item, idx) => (
               <div
                 key={idx}
@@ -356,13 +337,12 @@ export default function Home() {
               </div>
             ))}
           </div>
-
           <div className="flex flex-wrap justify-center gap-6">
             {pillarsSecondRow.map((item, idx) => (
               <div
                 key={idx}
                 onClick={() => handleCardClick(item.slug)}
-                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-grow-0 cursor-pointer"
+                className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] flex-grow-0 cursor-pointer"
               >
                 <PillarCard item={item} />
               </div>

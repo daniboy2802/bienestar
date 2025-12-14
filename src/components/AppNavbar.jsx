@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../logo.svg";
 
 const links = [
   { label: "CONÓZCANOS", to: "/conozcanos" },
@@ -17,7 +16,7 @@ export default function AppNavbar() {
         <div className="flex items-center">
           <NavLink to="/">
             <img
-              src={logo}
+              src="/images/Logo_PAE.svg"
               alt="Bienestar PAE"
               className="h-16 w-auto cursor-pointer"
             />

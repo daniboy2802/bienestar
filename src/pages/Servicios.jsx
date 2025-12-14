@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 const services = {
   "accion-nom-035": {
-    img: "/images/coberturac.jpg",
+    img: "/images/estrategia.jpg",
     name: "Estrategia para aplicación,cumplimiento y seguimiento de la nom - 035",
     phrase:
       '"Es impensable el costo que representa para una empresa, el no cuidar el RIESGO PSICOSOCIAL".',
@@ -27,7 +27,7 @@ const services = {
     },
   },
   "custom-care": {
-    img: "/images/coberturac.jpg",
+    img: "/images/costume.jpg",
     name: "Customer care Cálida atención a cliente 24/7 x 365",
     phrase:
       '"Disponibilidad absoluta con el trato más cordial y pertinente, con honestidad y máxima confidencialidad, porque sabemos que se trata de sus emociones".',
@@ -161,7 +161,7 @@ export default function Servicios() {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5"
-          d="M13 10V3L4 14h7v7l9-11h-7z"
+          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
         />
       </svg>
     ),
@@ -197,22 +197,6 @@ export default function Servicios() {
         />
       </svg>
     ),
-    "capaz-180": (
-      <svg
-        className="w-full h-full"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="1.5"
-          d="M3 12l2-2m0 0l7-7 4 4 3 3M5 12h14m-12 5h10m-10 4h10m-3-4l-3-3"
-        />
-      </svg>
-    ),
     webinars: (
       <svg
         className="w-full h-full"
@@ -225,7 +209,7 @@ export default function Servicios() {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5"
-          d="M15 10l4.55 4.55a.8.8 0 01-.56 1.36H5.01a.8.8 0 01-.56-1.36L9.5 10m5.5 0v6M12 18h.01"
+          d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
         />
       </svg>
     ),
@@ -241,7 +225,7 @@ export default function Servicios() {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5"
-          d="M13 10V3L4 14h7v7l9-11h-7z"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
     ),
@@ -257,15 +241,10 @@ export default function Servicios() {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1.5"
-          d="M3.055 11H5a2 2 0 012 2v2a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5a2.5 2.5 0 002.5 2.5h.5a2.5 2.5 0 012.5 2.5v1M21 13a9 9 0 11-18 0 9 9 0 0118 0z"
+          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
     ),
-  };
-
-  const capaz180Service = {
-    name: "CAPAZ 180",
-    description: "Servicio para lograr las metas",
   };
 
   return (
@@ -396,7 +375,7 @@ export default function Servicios() {
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="border-t border-gray-600 pt-12 mb-12"></div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6"> 
             {cardServices.map(([key, s]) => (
               <ServiceCard
                 key={key}
@@ -406,15 +385,6 @@ export default function Servicios() {
                 description={s.description.slice(0, 50) + "..."}
               />
             ))}
-            {slugToUse !== "capaz-180" && (
-              <ServiceCard
-                key="capaz-180"
-                slug="capaz-180"
-                icon={icons["capaz-180"]}
-                title={capaz180Service.name}
-                description={capaz180Service.description}
-              />
-            )}
           </div>
         </div>
       </section>

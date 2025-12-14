@@ -9,7 +9,7 @@ export default function Nom35() {
   return (
     <div className="font-sans antialiased bg-white">
       <section className="flex flex-col md:flex-row w-full max-w-full">
-        <div className="w-full md:w-1/2 bg-[#41affd] flex items-center justify-start p-8 md:pl-24 lg:pl-32 min-h-[150px] md:min-h-[350px]">
+        <div className="w-full md:w-1/2 bg-[#2072b2] flex items-center justify-start p-8 md:pl-24 lg:pl-32 min-h-[150px] md:min-h-[350px]">
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-normal tracking-wide pl-40">
             NOM-035
           </h1>

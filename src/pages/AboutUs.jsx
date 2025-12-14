@@ -27,7 +27,7 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col w-full font-sans">
       <section className="flex flex-col md:flex-row h-auto md:h-[350px] w-full">
-        <div className="w-full md:w-1/2 bg-[#41affd] flex flex-col justify-center px-8 md:px-20 py-12">
+        <div className="w-full md:w-1/2 bg-[#18b2bd] flex flex-col justify-center px-8 md:px-20 py-12">
           <Typography variant="h1" color="white" className="text-4xl md:text-6xl font-normal leading-tight pl-20">
             Bienvenido <br />
             a Asistencia y <br />
@@ -36,7 +36,7 @@ export default function AboutUs() {
         </div>
         <div className="w-full md:w-1/2 relative h-[300px] md:h-full">
           <img 
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            src="/images/asistencia.jpg" 
             alt="Imagen Conozcanos" 
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -75,7 +75,7 @@ export default function AboutUs() {
       </section>
       <section 
         className="relative h-[500px] w-full bg-cover bg-center flex items-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')" }}
+        style={{ backgroundImage: 'url("/images/footer.jpg")' }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 px-8 md:px-24 max-w-5xl">
