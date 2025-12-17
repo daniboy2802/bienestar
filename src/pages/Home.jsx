@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Card, CardBody, Typography, Button } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
+import PAEVideo from "../assets/PAE.mp4";
 
 const stats = [
   { value: 48, suffix: "%", label: "Reducción estrés laboral" },
@@ -219,6 +220,8 @@ export default function Home() {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isVideoMuted, setIsVideoMuted] = useState(true);
+  const videoRef = useRef(null);
 
   const handleCardClick = (slug) => {
     navigate(`/servicio/${slug}`);
@@ -351,24 +354,65 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className="relative h-[450px] w-full bg-cover bg-center flex items-center justify-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/30"></div>
-        <button className="relative z-10 w-20 h-20 bg-[#E91E63] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 group">
-          <svg
-            className="w-10 h-10 text-white ml-1"
-            fill="currentColor"
-            viewBox="0 0 24 24"
+      <section className="relative w-full flex items-center justify-center overflow-hidden bg-black">
+        <div className="relative w-full" style={{ aspectRatio: '16/9', maxHeight: '600px' }}>
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted={isVideoMuted}
+            playsInline
+            className="w-full h-full object-contain"
           >
-            <path d="M8 5v14l11-7z" />
-          </svg>
-          <div className="absolute inset-0 rounded-full animate-ping bg-[#E91E63] opacity-25"></div>
-        </button>
+            <source src={PAEVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/20"></div>
+          <button
+            onClick={() => {
+              setIsVideoMuted(!isVideoMuted);
+              if (videoRef.current) {
+                videoRef.current.muted = !isVideoMuted;
+              }
+            }}
+            className="absolute bottom-6 right-6 z-10 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 backdrop-blur-sm"
+            aria-label={isVideoMuted ? "Activar sonido" : "Silenciar"}
+          >
+            {isVideoMuted ? (
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
       </section>
     </div>
   );

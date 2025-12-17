@@ -27,10 +27,6 @@ export default function AppFooterFooter() {
             </a>
           </div>
 
-          <p className="flex items-center gap-3 mb-2">
-            <span>📞</span> (+52) 800 507 3120
-          </p>
-
           <p className="flex items-center gap-3">
             <span>✉️</span> contacto@bienestarpae.com
           </p>
