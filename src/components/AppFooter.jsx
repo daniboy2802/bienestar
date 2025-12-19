@@ -32,12 +32,10 @@ export default function AppFooterFooter() {
           </p>
         </div>
         <div className="text-sm space-y-2 tracking-wide">
-          <a href="/" className="block hover:underline">CONÓZCANOS</a>
-          <a href="/" className="block hover:underline">¿QUÉ ES?</a>
-          <a href="/" className="block hover:underline">SERVICIO</a>
-          <a href="/" className="block hover:underline">NOM35</a>
-          <a href="/" className="block hover:underline">BLOG</a>
-          <a href="/" className="block hover:underline">CONTACTO</a>
+          <a href="/conozcanos" className="block hover:underline">CONÓZCANOS</a>
+          <a href="/servicio" className="block hover:underline">SERVICIO</a>
+          <a href="/nom35" className="block hover:underline">NOM35</a>
+          <a href="/contacto" className="block hover:underline">CONTACTO</a>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-10">

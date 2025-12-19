@@ -5,7 +5,6 @@ const links = [
   { label: "CONÓZCANOS", to: "/conozcanos" },
   { label: "SERVICIO",   to: "/servicio" },
   { label: "NOM35",      to: "/nom35" },
-  { label: "BLOG",       to: "/blog" },
   { label: "CONTACTO",   to: "/contacto" },
 ];
 
