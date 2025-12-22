@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 export default function AppFooterFooter() {
   return (
@@ -32,10 +32,10 @@ export default function AppFooterFooter() {
           </p>
         </div>
         <div className="text-sm space-y-2 tracking-wide">
-          <a href="/conozcanos" className="block hover:underline">CONÓZCANOS</a>
-          <a href="/servicio" className="block hover:underline">SERVICIO</a>
-          <a href="/nom35" className="block hover:underline">NOM35</a>
-          <a href="/contacto" className="block hover:underline">CONTACTO</a>
+          <Link to="/conozcanos" className="block hover:underline">CONÓZCANOS</Link>
+          <Link to="/servicio" className="block hover:underline">SERVICIO</Link>
+          <Link to="/nom35" className="block hover:underline">NOM35</Link>
+          <Link to="/contacto" className="block hover:underline">CONTACTO</Link>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-10">
