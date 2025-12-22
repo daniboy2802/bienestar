@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardBody,
@@ -116,7 +117,7 @@ export default function Service() {
 }
 function PillarCard({ item }) {
   return (
-    <a href={`/servicio/${item.slug}`} className="block w-80 h-full">
+    <Link to={`/servicio/${item.slug}`} className="block w-80 h-full">
       <Card className="w-full h-full shadow-sm hover:shadow-lg transition-shadow border border-gray-100 rounded-xl cursor-pointer flex flex-col"> 
         <CardBody className="flex flex-col items-center text-center p-8 h-full flex-grow">
           <div className="mb-4 p-3 bg-cyan-50 rounded-full">
@@ -149,6 +150,6 @@ function PillarCard({ item }) {
           </div> 
         </CardBody>
       </Card>
-    </a>
+    </Link>
   );
 }
