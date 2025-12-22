@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const services = {
@@ -93,42 +94,39 @@ const services = {
 };
 
 const ServiceCard = ({ icon, title, description, slug }) => (
-  <a
-    href={`/servicio/${slug}`}
-    className="w-full h-full shadow-sm hover:shadow-lg transition-shadow border border-gray-100 rounded-xl bg-white"
+  <Link
+    to={`/servicio/${slug}`}
+    className="block w-full h-full shadow-sm hover:shadow-lg transition-shadow border border-gray-100 rounded-xl bg-white group"
   >
     <div className="flex flex-col items-center text-center p-8 h-full">
-      <div className="mb-4 p-3 bg-cyan-50 rounded-full">
+      <div className="mb-4 p-3 bg-cyan-50 rounded-full group-hover:bg-cyan-100 transition-colors">
         <div className="text-cyan-700 w-8 h-8">{icon}</div>
       </div>
       <h5 className="text-gray-900 font-bold text-base leading-tight mb-2">
         {title}
       </h5>
       <p className="text-sm text-gray-500 mb-6 flex-grow">{description}</p>
+      
+      {/* Visualmente parece un botón, pero ya no es una etiqueta <a> */}
       <div className="mt-auto flex justify-center w-full">
-        <a
-          href={`/servicio/${slug}`}
-          className="transition-colors hover:bg-gray-100 rounded"
-        >
-          <div className="border border-gray-300 rounded px-4 py-1">
-            <svg
-              className="w-4 h-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </div>
-        </a>
+        <div className="border border-gray-300 rounded px-4 py-1 group-hover:bg-gray-100 transition-colors">
+          <svg
+            className="w-4 h-4 text-gray-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </div>
       </div>
     </div>
-  </a>
+  </Link>
 );
 
 export default function Servicios() {
