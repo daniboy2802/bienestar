@@ -73,6 +73,93 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+
+      {/* Sección MISIÓN, VISIÓN, VALORES */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-12 text-center">
+              MISIÓN, VISIÓN, VALORES
+            </h2>
+            
+            {/* Misión */}
+            <div className="mb-12 bg-white rounded-xl p-8 shadow-md border border-gray-100">
+              <h3 className="text-3xl font-bold text-[#2072b2] mb-4">Misión</h3>
+              <p className="text-lg text-gray-900 leading-relaxed">
+                Poner al alcance de las empresas, la oportunidad de brindar a sus empleados y sus beneficiarios, un acompañamiento especializado para fortalecer el equilibrio emocional, motivación y crecimiento personal.
+              </p>
+            </div>
+
+            {/* Visión */}
+            <div className="mb-12 bg-white rounded-xl p-8 shadow-md border border-gray-100">
+              <h3 className="text-3xl font-bold text-[#2072b2] mb-4">Visión</h3>
+              <p className="text-lg text-gray-900 leading-relaxed">
+                Ser un verdadero agente de inspiración y cambio empatizando ante la necesidad, estando a la vanguardia en servicios de bienestar integral.
+              </p>
+            </div>
+
+            {/* Valores */}
+            <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
+              <h3 className="text-3xl font-bold text-[#2072b2] mb-6">Valores</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Compromiso</h4>
+                  <p className="text-gray-700">Es la dedicación y responsabilidad para brindar un servicio de calidad.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Empatía</h4>
+                  <p className="text-gray-700">Escuchar más allá de las palabras, conduciéndonos con sensibilidad y respeto.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Trabajo en equipo</h4>
+                  <p className="text-gray-700">Disposición para trabajar en unión de una manera solidaria y colaborativa, cuidando del otro.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Pasión</h4>
+                  <p className="text-gray-700">Iniciativa, entrega y dedicación para desenvolvernos con entusiasmo y energía.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Honestidad</h4>
+                  <p className="text-gray-700">Actuar con rectitud y transparencia para generar confianza y credibilidad.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Lealtad</h4>
+                  <p className="text-gray-700">Actuar con convicción para respaldar a la organización.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Aprendizaje</h4>
+                  <p className="text-gray-700">Mantenernos en constante evolución para que el equipo crezca y se siga desarrollando.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Resiliencia</h4>
+                  <p className="text-gray-700">Capacidad de adaptación para afrontar y aprender de las situaciones.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Liderazgo situacional</h4>
+                  <p className="text-gray-700">La habilidad de liderar a un equipo de acuerdo a las circunstancias.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Comunicación Asertiva</h4>
+                  <p className="text-gray-700">La habilidad de comunicar una idea de forma clara y concisa.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Ética</h4>
+                  <p className="text-gray-700">Actuar de acuerdo a los valores de la organización.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Proactividad</h4>
+                  <p className="text-gray-700">La capacidad de tomar la iniciativa para resolver.</p>
+                </div>
+                <div className="border-l-4 border-[#2072b2] pl-4 md:col-span-2">
+                  <h4 className="text-xl font-semibold text-gray-800 mb-2">Mejora continua</h4>
+                  <p className="text-gray-700">Habilidad para desarrollar el crecimiento personal y profesional.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section 
         className="relative h-[500px] w-full bg-cover bg-center flex items-center"
         style={{ backgroundImage: 'url("/images/footer.jpg")' }}

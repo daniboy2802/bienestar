@@ -66,10 +66,12 @@ resource "aws_lambda_function" "contact_form_handler" {
   environment {
     variables = {
       PHONE_NUMBER_1 = var.phone_number_1
-      PHONE_NUMBER_2 = var.phone_number_2
-      PHONE_NUMBER_3 = var.phone_number_3
     }
   }
+
+  depends_on = [
+    aws_iam_role_policy.lambda_policy
+  ]
 }
 
 # API Gateway REST API
@@ -165,29 +167,34 @@ resource "aws_api_gateway_deployment" "contact_deployment" {
   depends_on = [
     aws_api_gateway_integration.contact_integration,
     aws_api_gateway_integration.contact_options_integration,
+    aws_api_gateway_method_response.contact_options_response,
+    aws_api_gateway_integration_response.contact_options_integration_response,
   ]
 
   rest_api_id = aws_api_gateway_rest_api.contact_api.id
   stage_name  = "prod"
+
+  # Forzar nueva deployment cuando cambie algo
+  triggers = {
+    redeployment = sha1(jsonencode([
+      aws_api_gateway_resource.contact_resource.id,
+      aws_api_gateway_method.contact_post.id,
+      aws_api_gateway_method.contact_options.id,
+      aws_api_gateway_integration.contact_integration.id,
+    ]))
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 # Variables
 variable "phone_number_1" {
-  description = "Primer número de teléfono para notificaciones"
+  description = "Número de teléfono para notificaciones SMS"
   type        = string
-  default     = "+5215512345678"
-}
-
-variable "phone_number_2" {
-  description = "Segundo número de teléfono para notificaciones"
-  type        = string
-  default     = "+5215512345679"
-}
-
-variable "phone_number_3" {
-  description = "Tercer número de teléfono para notificaciones"
-  type        = string
-  default     = "+5215512345680"
+  default     = "+529513099928"
+  sensitive   = false
 }
 
 # Outputs

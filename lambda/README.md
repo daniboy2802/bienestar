@@ -10,7 +10,10 @@ lambda/
 │   ├── lambda_function.py    # Código de la función Lambda
 │   ├── requirements.txt       # Dependencias Python
 │   └── README.md              # Documentación detallada
-├── terraform.tf               # Configuración de infraestructura
+├── terraform.tf               # Configuración de infraestructura (Lambda + API Gateway)
+├── terraform.tfvars.example   # Ejemplo de variables de configuración
+├── deploy.sh                  # Script automatizado de deploy
+├── .gitignore                 # Archivos a ignorar en git
 └── README.md                  # Este archivo
 ```
 
@@ -64,37 +67,58 @@ aws lambda create-function \
     --environment Variables="{PHONE_NUMBER_1=+5215512345678,PHONE_NUMBER_2=+5215512345679,PHONE_NUMBER_3=+5215512345680}"
 ```
 
-#### Opción C: Usando Terraform
+#### Opción C: Usando Terraform (Recomendado - Despliega Lambda + API Gateway)
 
+Esta es la opción más completa ya que despliega tanto la Lambda como el API Gateway automáticamente.
+
+**Requisitos previos:**
+- Terraform instalado
+- AWS CLI configurado con credenciales
+- Permisos de AWS para crear recursos (Lambda, API Gateway, IAM)
+
+**Pasos:**
+
+1. Configurar variables (opcional):
 ```bash
 cd lambda
 
-# Configurar variables en terraform.tfvars
-cat > terraform.tfvars << EOF
-phone_number_1 = "+5215512345678"
-phone_number_2 = "+5215512345679"
-phone_number_3 = "+5215512345680"
-EOF
-
-# Inicializar y desplegar
-terraform init
-terraform plan
-terraform apply
+# Copiar el archivo de ejemplo y editar con tus valores
+cp terraform.tfvars.example terraform.tfvars
+# Editar terraform.tfvars con tu número de teléfono
 ```
 
-### 3. Configurar API Gateway
+2. Ejecutar el script de deploy:
+```bash
+# Ver el plan sin aplicar cambios
+./deploy.sh
 
-La Lambda necesita ser expuesta a través de API Gateway:
+# Aplicar los cambios directamente
+./deploy.sh --apply
+```
 
-1. Crea un REST API en API Gateway
-2. Crea un recurso `/contact`
-3. Crea un método POST
-4. Integra con la función Lambda
-5. Habilita CORS
-6. Despliega en un stage (ej: `prod`)
-7. Copia la URL del endpoint
+El script automáticamente:
+- ✅ Empaqueta la función Lambda con sus dependencias
+- ✅ Inicializa Terraform
+- ✅ Valida la configuración
+- ✅ Muestra el plan de cambios
+- ✅ (Con --apply) Despliega la infraestructura completa
+- ✅ Muestra la URL del endpoint al finalizar
 
-### 4. Configurar el Frontend
+**Salida esperada:**
+```
+🚀 Iniciando despliegue de Lambda + API Gateway...
+📦 Paso 1: Creando paquete de la función Lambda...
+✅ Paquete creado: function.zip
+🔧 Paso 2: Inicializando Terraform...
+✔️  Paso 3: Validando configuración de Terraform...
+📋 Paso 4: Generando plan de despliegue...
+...
+📡 Endpoint URL: https://xxxxx.execute-api.us-east-1.amazonaws.com/prod/contact
+```
+
+**Nota:** La primera vez que ejecutes el deploy, Terraform creará todos los recursos. En despliegues posteriores, solo actualizará lo que haya cambiado.
+
+### 3. Configurar el Frontend
 
 En el archivo `.env` del proyecto React, agrega:
 

@@ -1,0 +1,4 @@
+# Copia este archivo a terraform.tfvars y configura tus valores
+# terraform.tfvars está en .gitignore y no se subirá al repositorio
+
+phone_number_1 = "+529513099928"

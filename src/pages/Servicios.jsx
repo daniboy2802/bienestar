@@ -73,7 +73,7 @@ const services = {
     phrase:
       '"Fortalecer su estabilidad emocional es asegurar su éxito personal y laboral".',
     description:
-      "En CAPAZ somos un spoyo firme y estratégico para acompañar a las personas en el camino hacia su mejor versión, ayudándoles a alcanzar la calidad de vida que merecen conforme a sus propias metas y aspiraciones. Através de un entrenamiento mental y emocional, promovemos un estado de armonía interior que les permite potenciar sus talentos y mantener un equilibrio saludable entre su vida personal y profesional. Guiamos a cada participante hacia un estilo de vida sano, basado en cambios posítivos, la definición de sus capacidades y la consecución de metas y objetivos, con un sólido balance físico, mental y social.",
+      "En Bienestar PAE somos un apoyo firme y estratégico para acompañar a las personas en el camino hacia su mejor versión, ayudándoles a alcanzar la calidad de vida que merecen conforme a sus propias metas y aspiraciones. A través de un entrenamiento mental y emocional, promovemos un estado de armonía interior que les permite potenciar sus talentos y mantener un equilibrio saludable entre su vida personal y profesional. Guiamos a cada participante hacia un estilo de vida sano, basado en cambios positivos, la definición de sus capacidades y la consecución de metas y objetivos, con un sólido balance físico, mental y social.",
   },
   webinars: {
     img: "/images/coberturac.jpg",
@@ -90,6 +90,46 @@ const services = {
       '"Estar ahí, en el momento preciso y con respuesta inmodiata, es por lo que hoy somos el número uno".',
     description:
       "Nuestro programa de Intervención en Crisis (CISM) está discñado para brindar apoyo inmediato y especializado ante situaciones críticas que impactan el bienestar emocional de los colaboradores.La intervención se realiza directamente en las instalaciones de las empresas que confian en nosotros, trabajando con grupos reducidos de hasta 15 empleados. Durante las sesiones, se ofrecen pláticas y acompañamiento emocional orientados a disminuir el impacto psicológico derivado de eventos traumáticos, como accidentes laborales, pérdidas humanas o crisis personales y colectivas. Nuestro objetivo es restaurar la estabilidad emocional de los colaboradores y favorecer su pronta recuperación.",
+  },
+  "atencion-psicologica": {
+    img: "/images/coberturac.jpg",
+    name: "Atención Psicológica",
+    phrase:
+      '"Contamos con un equipo de psicólogos especializados para brindar atención profesional y personalizada".',
+    description:
+      "Contamos con un equipo de psicólogos especializados para brindar atención profesional y personalizada a sus colaboradores y sus familiares cercanos.",
+    extrainfo: {
+      paragraph1: "Nuestros servicios incluyen:",
+      list: {
+        list1: "Atención inmediata y manejo de crisis",
+        list2: "Terapia breve, presencial o a distancia",
+        list3: "Cobertura nacional y 100% confidencialidad",
+        list4: "Canalización a instituciones especializadas según el caso",
+      },
+      paragraph2: "Áreas de atención psicológica:",
+      paragraph3:
+        "Tanatología • Pareja • Familia • Adicciones • Trastornos depresivos • Ansiedad • Estrés postraumático",
+    },
+  },
+  "consultoria-especializada": {
+    img: "/images/coberturac.jpg",
+    name: "Consultoría Especializada",
+    phrase:
+      '"Ofrecemos asesoría especializada en diversas áreas para complementar el bienestar integral de sus colaboradores".',
+    description:
+      "Ofrecemos asesoría especializada en diversas áreas para complementar el bienestar integral de sus colaboradores, brindando orientación profesional en cada una de estas áreas.",
+    extrainfo: {
+      paragraph1: "Nuestras especialidades incluyen:",
+      list: {
+        list1: "Asesoría Legal",
+        list2: "Asesoría Fiscal",
+        list3: "Asesoría Financiera",
+        list4: "Asesoría Nutricional",
+        list5: "Capacitación en Liderazgo",
+      },
+      paragraph2:
+        "Nuestros consultores especializados están disponibles para brindar orientación profesional en cada una de estas áreas, complementando nuestro servicio integral de bienestar.",
+    },
   },
 };
 
@@ -240,6 +280,38 @@ export default function Servicios() {
           strokeLinejoin="round"
           strokeWidth="1.5"
           d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    ),
+    "atencion-psicologica": (
+      <svg
+        className="w-full h-full"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+        />
+      </svg>
+    ),
+    "consultoria-especializada": (
+      <svg
+        className="w-full h-full"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
         />
       </svg>
     ),
