@@ -9,7 +9,7 @@ import {
 const pillarsFirstRow = [
   {
     slug: "accion-nom-035",
-    title: "Acción NOM-035",
+    title: "NOM-035",
     desc: "El costo de no atender el riesgo psicosocial en la empresa es incalculable.",
     icon: (
       <svg className="w-10 h-10 text-[#00A4CF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

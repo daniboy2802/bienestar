@@ -14,7 +14,7 @@ const stats = [
 const pillarsFirstRow = [
   {
     slug: "accion-nom-035",
-    title: "Acción NOM-035",
+    title: "NOM-035",
     desc: "El costo de no atender el riesgo psicosocial en la empresa es incalculable.",
     icon: (
       <svg

@@ -124,8 +124,7 @@ const services = {
         list1: "Asesoría Legal",
         list2: "Asesoría Fiscal",
         list3: "Asesoría Financiera",
-        list4: "Asesoría Nutricional",
-        list5: "Capacitación en Liderazgo",
+        list4: "Capacitación en Liderazgo",
       },
       paragraph2:
         "Nuestros consultores especializados están disponibles para brindar orientación profesional en cada una de estas áreas, complementando nuestro servicio integral de bienestar.",

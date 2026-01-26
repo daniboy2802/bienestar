@@ -169,7 +169,7 @@ export default function AboutUs() {
           <Typography variant="h2" color="white" className="text-3xl md:text-4xl leading-snug font-normal">
             “Una empresa sana <br />
             y emocionalmente <br />
-            <span className="font-light">en equilibrio es una empresa más <br />
+            <span className="font-light">en equilibrio, es una empresa más <br />
             eficiente y productiva.”</span>
           </Typography>
         </div>
