@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 const services = {
   "accion-nom-035": {
     img: "/images/estrategia.jpg",
-    name: "Estrategia para aplicación,cumplimiento y seguimiento de la nom - 035",
+    name: "Estrategia para aplicación,cumplimiento y seguimiento de la NOM-035",
     phrase:
       '"Es impensable el costo que representa para una empresa, el no cuidar el RIESGO PSICOSOCIAL".',
     description:

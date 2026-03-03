@@ -17,7 +17,7 @@ export default function Nom35() {
         <div className="w-full md:w-1/2 relative h-[250px] md:h-auto md:min-h-[300px]">
           <img 
             src="/images/nom038T.jpg" 
-            alt="Imagen Nom035 titulo" 
+            alt="Imagen NOM-035 titulo" 
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
         </div>
@@ -85,7 +85,7 @@ export default function Nom35() {
       <section className="w-full relative h-[300px] md:h-[400px]">
         <img 
           src="/images/nom038F.jpg" 
-          alt="Imagen footer nom035" 
+            alt="Imagen footer NOM-035"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

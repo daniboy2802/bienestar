@@ -421,6 +421,13 @@ export default function Contacto() {
                       >
                         contacto@bienestarpae.com
                       </a>
+                      {' '}o al teléfono{' '}
+                      <a 
+                        href="tel:+525537845715" 
+                        className="underline hover:text-red-800"
+                      >
+                        5537845715
+                      </a>
                     </p>
                     <p className="text-xs mt-2 text-red-600">
                       Si el problema persiste, revisa la consola del navegador (F12) para más detalles.
@@ -465,10 +472,18 @@ export default function Contacto() {
           no dude en contactarnos:
         </p>
 
-        <div className="space-y-2">
+        <div className="space-y-3">
           <div className="flex items-start gap-2 pt-2">
             <span>📧</span>
-            <p className="text-sm text-gray-700">contacto@bienestarpae.com</p>
+            <a href="mailto:contacto@bienestarpae.com" className="text-sm text-gray-700 hover:text-[#2072b2] hover:underline">
+              contacto@bienestarpae.com
+            </a>
+          </div>
+          <div className="flex items-start gap-2">
+            <span>📞</span>
+            <a href="tel:+525537845715" className="text-sm text-gray-700 hover:text-[#2072b2] hover:underline">
+              5537845715
+            </a>
           </div>
         </div>
       </section>
