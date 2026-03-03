@@ -290,18 +290,18 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       <section
-        className="relative h-[600px] w-full bg-cover bg-center transition-all duration-700"
+        className="relative h-[400px] sm:h-[500px] md:h-[600px] w-full bg-cover bg-center transition-all duration-700"
         style={{
           backgroundImage: `url('${heroSlides[currentSlide].image}')`,
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center">
           <div className="max-w-2xl text-white">
             <Typography
               key={`title-${currentSlide}`}
               variant="h2"
-              className={`mb-4 font-normal text-4xl md:text-5xl lg:text-6xl transition-all duration-700 ease-in-out ${
+              className={`mb-4 font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl transition-all duration-700 ease-in-out ${
                 isAnimating 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-4'
@@ -342,9 +342,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#F3F4F6] py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center divide-x-0 md:divide-x divide-gray-300">
+      <section className="bg-[#F3F4F6] py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-8 text-center divide-x-0 md:divide-x divide-gray-300">
             {stats.map((stat, idx) => (
               <CountUpStat
                 key={idx}
@@ -357,8 +357,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#EBEBEB] py-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-[#EBEBEB] py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <Typography variant="h3" className="text-gray-800 font-normal">
               Nuestros pilares con los

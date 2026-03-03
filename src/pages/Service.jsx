@@ -98,8 +98,8 @@ export default function Service() {
     <> 
       <div className="flex flex-col w-full font-sans">
           <section className="flex flex-col md:flex-row h-auto md:h-[350px] w-full">
-            <div className="w-full md:w-1/2 bg-[#56cbf1] flex flex-col justify-center px-8 md:px-20 py-12">
-              <Typography variant="h1" color="white" className="text-4xl md:text-6xl font-normal leading-tight pl-40">
+            <div className="w-full md:w-1/2 bg-[#56cbf1] flex flex-col justify-center px-6 sm:px-8 md:px-20 py-12">
+              <Typography variant="h1" color="white" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight">
                 Servicios <br />
                 Bienestar PAE
               </Typography>

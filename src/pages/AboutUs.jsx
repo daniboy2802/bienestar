@@ -27,8 +27,8 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col w-full font-sans">
       <section className="flex flex-col md:flex-row h-auto md:h-[350px] w-full">
-        <div className="w-full md:w-1/2 bg-[#18b2bd] flex flex-col justify-center px-8 md:px-20 py-12">
-          <Typography variant="h1" color="white" className="text-4xl md:text-6xl font-normal leading-tight pl-20">
+        <div className="w-full md:w-1/2 bg-[#18b2bd] flex flex-col justify-center px-6 sm:px-8 md:px-20 py-12">
+          <Typography variant="h1" color="white" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight">
             Bienvenido <br />
             a Asistencia y <br />
             Bienestar PAE

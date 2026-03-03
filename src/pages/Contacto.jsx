@@ -266,8 +266,8 @@ export default function Contacto() {
         </div>
       </section>
 
-      <section className="flex justify-center py-10 md:py-16 bg-[#EDEDED]">
-        <div className="bg-white rounded-xl p-6 md:p-10 w-[90%] md:w-[70%] shadow-md">
+      <section className="flex justify-center py-10 md:py-16 bg-[#EDEDED] px-4 sm:px-6">
+        <div className="bg-white rounded-xl p-4 sm:p-6 md:p-10 w-full max-w-4xl shadow-md">
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -464,7 +464,7 @@ export default function Contacto() {
         </div>
       </section>
 
-      <section className="px-6 md:px-32 py-10 text-gray-700 bg-[#EDEDED]">
+      <section className="px-4 sm:px-6 md:px-12 lg:px-32 py-10 text-gray-700 bg-[#EDEDED]">
         <p className="text-sm leading-relaxed mb-6">
           Si necesita de nuestra asistencia personalizada para su compañía
           podemos elaborar un programa adecuado a sus necesidades,

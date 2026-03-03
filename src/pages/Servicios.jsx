@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
@@ -137,7 +137,7 @@ const ServiceCard = ({ icon, title, description, slug }) => (
     to={`/servicio/${slug}`}
     className="block w-full h-full shadow-sm hover:shadow-lg transition-shadow border border-gray-100 rounded-xl bg-white group"
   >
-    <div className="flex flex-col items-center text-center p-8 h-full">
+    <div className="flex flex-col items-center text-center p-6 sm:p-8 h-full">
       <div className="mb-4 p-3 bg-cyan-50 rounded-full group-hover:bg-cyan-100 transition-colors">
         <div className="text-cyan-700 w-8 h-8">{icon}</div>
       </div>
@@ -172,6 +172,12 @@ export default function Servicios() {
   const { slug } = useParams();
   const slugToUse = slug && services[slug] ? slug : "cobertura-completa";
   const serviceData = services[slugToUse];
+
+  // Scroll al top cuando se carga la página o cambia el slug
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
+
   if (!serviceData) {
     return (
       <div className="text-center p-20 min-h-screen bg-gray-50">
@@ -327,7 +333,7 @@ export default function Servicios() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl w-full px-6 lg:px-28 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="relative z-10 max-w-7xl w-full px-4 sm:px-6 lg:px-12 xl:px-28 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="text-white pt-10">
             <div className="mb-4">
               <div className="w-12 h-12 mb-4 text-white opacity-90">
@@ -342,7 +348,7 @@ export default function Servicios() {
         </div>
       </section>
       <main className="max-w-7xl mx-auto px-6 py-16">
-        <p className="text-4xl font-semibold text-gray-700 mb-10 leading-snug text-center w-full px-28">
+        <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-700 mb-10 leading-snug text-center w-full px-4 sm:px-6 md:px-12 lg:px-28">
           {serviceData.phrase}
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -441,10 +447,10 @@ export default function Servicios() {
           <div className="hidden lg:block"></div>
         </div>
       </main>
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-gray-50 py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="border-t border-gray-600 pt-12 mb-12"></div>
-          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6"> 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
             {cardServices.map(([key, s]) => (
               <ServiceCard
                 key={key}
