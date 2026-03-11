@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Typography,
   Card,
@@ -24,6 +24,10 @@ const infoCards = [
 ]; 
 
 export default function AboutUs() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="flex flex-col w-full font-sans">
       <section className="flex flex-col md:flex-row h-auto md:h-[350px] w-full">

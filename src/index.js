@@ -10,6 +10,7 @@ import Servicio from './pages/Service';
 import Servicios from './pages/Servicios';
 import Nom35 from './pages/Nom35';
 import Contacto from './pages/Contacto';
+import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,14 @@ const router = createBrowserRouter([
     element: (
       <MainLayout>
         <Contacto />
+      </MainLayout>
+    )
+  },
+  {
+    path: "/politica-privacidad",
+    element: (
+      <MainLayout>
+        <PoliticaPrivacidad />
       </MainLayout>
     )
   }

@@ -57,19 +57,13 @@ const pillarsFirstRow = [
     title: "Cobertura completa",
     desc: "De especialidades psicológicas y consultorías especializadas.",
     icon: (
-      <svg
-        className="w-10 h-10 text-[#00A4CF]"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      <div className="absolute inset-0 flex items-center justify-center">
+        <img
+          src="/map.svg"
+          alt="Cobertura México"
+          className="w-10 h-10 object-contain scale-[6] origin-center flex-shrink-0"
         />
-      </svg>
+      </div>
     ),
   },
 ];
@@ -323,6 +317,7 @@ export default function Home() {
             <Button
               size="lg"
               className="bg-[#00C2E8] hover:bg-[#0097C4] text-white rounded-none px-8 shadow-none hover:shadow-lg transition-all"
+              onClick={() => navigate("/conozcanos")}
             >
               CONOCE MÁS &rarr;
             </Button>
@@ -462,7 +457,9 @@ function PillarCard({ item }) {
   return (
     <Card className="h-full shadow-sm hover:shadow-md transition-shadow border border-gray-100 rounded-xl">
       <CardBody className="flex flex-col items-center text-center p-8 h-full">
-        <div className="mb-4 p-3 bg-cyan-50 rounded-full">{item.icon}</div>
+        <div className="mb-4 w-16 h-16 rounded-full bg-cyan-50 flex items-center justify-center relative shrink-0">
+          {item.icon}
+        </div>
         <Typography variant="h6" color="blue-gray" className="mb-2 font-bold">
           {item.title}
         </Typography>

@@ -6,11 +6,13 @@ export default function AppFooterFooter() {
     <footer className="bg-[#0274BE] text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div className="flex flex-col items-start">
-          <img src="/images/Logo_PAE.svg" alt="Bienestar PAE" className="w-40 mb-4" />
+          <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+            <img src="/images/Logo_PAE.svg" alt="Bienestar PAE" className="w-40 mb-4" />
 
-          <p className="text-sm tracking-wide opacity-90">
-            RECONOCE. RESPETA. SANA. POTENCIA.
-          </p>
+            <p className="text-sm tracking-wide opacity-90">
+              RECONOCE. RESPETA. SANA. POTENCIA.
+            </p>
+          </Link>
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-4">Contáctenos</h3>
@@ -57,12 +59,15 @@ export default function AppFooterFooter() {
           <Link to="/servicio" className="block hover:underline">SERVICIO</Link>
           <Link to="/nom35" className="block hover:underline">NOM-035</Link>
           <Link to="/contacto" className="block hover:underline">CONTACTO</Link>
+          <Link to="/politica-privacidad" className="block hover:underline">POLÍTICA DE PRIVACIDAD</Link>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-10">
         <div className="border-t border-white w-full opacity-60 mb-4"></div>
         <p className="text-center text-xs tracking-[0.25em] opacity-90">
-          Políticas de Privacidad | 2025 DERECHOS RESERVADOS
+          <Link to="/politica-privacidad" className="hover:underline">Políticas de Privacidad</Link>
+          {" | "}
+          2025 DERECHOS RESERVADOS
         </p>
       </div>
     </footer>

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function Nom35() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const CheckIcon = () => (
     <svg className="w-6 h-6 text-[#0C6AB9] mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
