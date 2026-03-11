@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-<<<<<<< Updated upstream
-=======
 import { Link } from "react-router-dom";
->>>>>>> Stashed changes
 
 // URL de la Lambda a través de API Gateway
 const LAMBDA_ENDPOINT = process.env.REACT_APP_LAMBDA_ENDPOINT || 'https://u8jetz7kg5.execute-api.us-east-1.amazonaws.com/prod/contact';
@@ -445,9 +442,6 @@ export default function Contacto() {
               </div>
             )}
 
-<<<<<<< Updated upstream
-            <div className="flex justify-end mt-6">
-=======
             <p className="mt-4 text-sm text-gray-600">
               Al enviar este formulario estás de acuerdo con la{" "}
               <Link
@@ -460,7 +454,6 @@ export default function Contacto() {
             </p>
 
             <div className="flex justify-end mt-4">
->>>>>>> Stashed changes
               <button
                 type="submit"
                 disabled={isSubmitting}

@@ -57,13 +57,11 @@ const pillarsFirstRow = [
     title: "Cobertura completa",
     desc: "De especialidades psicológicas y consultorías especializadas.",
     icon: (
-      <div className="absolute inset-0 flex items-center justify-center">
-        <img
-          src="/map.svg"
-          alt="Cobertura México"
-          className="w-10 h-10 object-contain scale-[6] origin-center flex-shrink-0"
-        />
-      </div>
+      <img
+        src="/map.svg"
+        alt="Cobertura México"
+        className="w-10 h-10 object-contain flex-shrink-0"
+      />
     ),
   },
 ];

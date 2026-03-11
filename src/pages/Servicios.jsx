@@ -173,14 +173,9 @@ export default function Servicios() {
   const slugToUse = slug && services[slug] ? slug : "cobertura-completa";
   const serviceData = services[slugToUse];
 
-<<<<<<< Updated upstream
   // Scroll al top cuando se carga la página o cambia el slug
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-=======
-  useEffect(() => {
-    window.scrollTo(0, 0);
->>>>>>> Stashed changes
   }, [slug]);
 
   if (!serviceData) {
